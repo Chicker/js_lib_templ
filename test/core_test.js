@@ -2,16 +2,15 @@
  * Created by dns on 15.10.13.
  */
 
-var expect = chai.expect;
+define(['build/core'], function(core) {
+  "use strict";
 
-describe("Core test", function () {
-  it("test", function () {
-    expect(true).to.be.true;
+  var Cow = core.Cow;
+
+  describe("Yandex Metrika API", function () {
+    it("should return counter_id", function () {
+      var cow = new Cow("Mister");
+      expect(cow.greets("my")).to.eql("Mister greets my");
+    })
   })
-
-  it("cow test", function () {
-    var cow = new Cow("Vadim");
-
-    expect(cow.greets("me")).to.equal("Vadim greets me");
-  })
-})
+});
